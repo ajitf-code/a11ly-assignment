@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
             <div class="nav-left">
-                <a href="#" class="logo">Applesoft</a>
+                <a href="index.html" class="logo" aria-label="Applesoft Home">Applesoft</a>
                 <ul class="nav-links">
-                    <li><a href="#">System Os</a></li>
+                    <li><a href="#" aria-current="page">System Os</a></li>
                     <li><a href="#">Laptop Series</a></li>
                     <li><a href="#">Support</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -20,98 +23,112 @@
             </div>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><button class="search-button" aria-label="Search"></button></li>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="#">Sign In</a></li>
+                    <li><button class="search-button" aria-label="Search products" type="button"></button></li>
+                    <li><a href="#" aria-label="Shopping cart, 0 items">Cart</a></li>
+                    <li><a href="#" aria-label="Sign in to your account">Sign In</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div>
-        <section class="hero">
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-heading">
             <div class="hero-content">
-                <h1>Applesoft 100</h1>
+                <h1 id="hero-heading">Applesoft 100</h1>
                 <p>Turn your ideas into reality, stay safer online and off, and focus on what matters most with Applesoft 100 apps</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn primary" aria-hidden="true">For one person</a>
-                    <a href="#" class="btn secondary">For up to six people</a>
+                <div class="cta-buttons" role="group" aria-label="Product options">
+                    <a href="#" class="btn primary" role="button">For one person</a>
+                    <a href="#" class="btn secondary" role="button">For up to six people</a>
                 </div>
             </div>
         </section>
 
-        <section class="featured-products">
+        <section class="featured-products" aria-labelledby="products-heading">
+            <h2 id="products-heading">Featured Products</h2>
             <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://picsum.photos/300/200" alt="Laptop Series 5 product image">
-                    <h1>Laptop Series 5</h1>
-                    <h4>Sophisticated style and multitasking speed powered by 12th Gen Intel® Core™ i5/i7 processors</h4>
-                    <div href="#" class="learn-more">Learn more</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://picsum.photos/300/200" alt="Gamebox Series X product image">
-                    <h1>Gamebox Series X</h1>
-                    <p>The fastest, most powerful Gamebox ever</p>
-                    <div class="learn-more" aria-role="button">Learn more</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://picsum.photos/300/200" alt="System Os 11 product image">
-                    <h1>System Os 11</h1>
-                    <p>Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.</p>
-                    <div class="learn-more">Learn more</div>
-                </div>
+                <article class="product-card">
+                    <img src="https://picsum.photos/300/200" alt="Laptop Series 5 - A sleek silver laptop with modern design" loading="lazy">
+                    <div class="product-info">
+                        <h3>Laptop Series 5</h3>
+                        <p>Sophisticated style and multitasking speed powered by 12th Gen Intel® Core™ i5/i7 processors</p>
+                        <button class="learn-more" data-product="laptop-series-5" aria-describedby="laptop-series-5-desc">Learn more about Laptop Series 5</button>
+                        <div id="laptop-series-5-desc" class="visually-hidden">Opens detailed information about Laptop Series 5 in a modal dialog</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img src="https://picsum.photos/300/200" alt="Gamebox Series X - Gaming console in black finish" loading="lazy">
+                    <div class="product-info">
+                        <h3>Gamebox Series X</h3>
+                        <p>The fastest, most powerful Gamebox ever</p>
+                        <button class="learn-more" data-product="gamebox-series-x" aria-describedby="gamebox-series-x-desc">Learn more about Gamebox Series X</button>
+                        <div id="gamebox-series-x-desc" class="visually-hidden">Opens detailed information about Gamebox Series X in a modal dialog</div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img src="https://picsum.photos/300/200" alt="System Os 11 - Operating system interface screenshot" loading="lazy">
+                    <div class="product-info">
+                        <h3>System Os 11</h3>
+                        <p>Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.</p>
+                        <button class="learn-more" data-product="system-os-11" aria-describedby="system-os-11-desc">Learn more about System Os 11</button>
+                        <div id="system-os-11-desc" class="visually-hidden">Opens detailed information about System Os 11 in a modal dialog</div>
+                    </div>
+                </article>
             </div>
         </section>
-    </div>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
-            <div class="footer-section">
-                <h1>What's new</h1>
+            <nav class="footer-section" aria-labelledby="footer-whats-new">
+                <h3 id="footer-whats-new">What's new</h3>
                 <ul>
-                    <li><a href="#">Laptop Pro 9</a></li>
-                    <li><a href="#">Laptop Series 5</a></li>
-                    <li><a href="#">Laptop Studio 2+</a></li>
-                    <li><a href="#">Laptop Laptop Go 2</a></li>
+                    <li><a href="#" aria-label="Learn more about Laptop Pro 9">Laptop Pro 9</a></li>
+                    <li><a href="#" aria-label="Learn more about Laptop Series 5">Laptop Series 5</a></li>
+                    <li><a href="#" aria-label="Learn more about Laptop Studio 2+">Laptop Studio 2+</a></li>
+                    <li><a href="#" aria-label="Learn more about Laptop Laptop Go 2">Laptop Laptop Go 2</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h2>Applesoft Store</h2>
+            </nav>
+            <nav class="footer-section" aria-labelledby="footer-store">
+                <h3 id="footer-store">Applesoft Store</h3>
                 <ul>
-                    <li><a href="#">Account profile</a></li>
-                    <li><a href="#">Download Center</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Order tracking</a></li>
+                    <li><a href="#" aria-label="View your account profile">Account profile</a></li>
+                    <li><a href="#" aria-label="Go to download center">Download Center</a></li>
+                    <li><a href="#" aria-label="Process returns">Returns</a></li>
+                    <li><a href="#" aria-label="Track your orders">Order tracking</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Education</h3>
+            </nav>
+            <nav class="footer-section" aria-labelledby="footer-education">
+                <h3 id="footer-education">Education</h3>
                 <ul>
-                    <li><a href="#">Applesoft in education</a></li>
-                    <li><a href="#">Office for students</a></li>
-                    <li><a href="#">Office Suite for schools</a></li>
-                    <li><a href="#">Deals for students</a></li>
+                    <li><a href="#" aria-label="Applesoft products for education">Applesoft in education</a></li>
+                    <li><a href="#" aria-label="Office suite for students">Office for students</a></li>
+                    <li><a href="#" aria-label="Office suite for educational institutions">Office Suite for schools</a></li>
+                    <li><a href="#" aria-label="Special pricing for students">Deals for students</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h6>Business</h6>
+            </nav>
+            <nav class="footer-section" aria-labelledby="footer-business">
+                <h3 id="footer-business">Business</h3>
                 <ul>
-                    <li><a href="#">Applesoft Cloud</a></li>
-                    <li><a href="#">Applesoft Security</a></li>
-                    <li><a href="#">Applesoft 100</a></li>
-                    <li><a href="#">System Os 11 for business</a></li>
+                    <li><a href="#" aria-label="Cloud services for business">Applesoft Cloud</a></li>
+                    <li><a href="#" aria-label="Security solutions for business">Applesoft Security</a></li>
+                    <li><a href="#" aria-label="Business productivity suite">Applesoft 100</a></li>
+                    <li><a href="#" aria-label="Operating system for business">System Os 11 for business</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </footer>
+
     <!-- Modal -->
-    <div id="product-modal" class="modal">
+    <div id="product-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-text" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-title"></h2>
-            <div id="modal-text"></div>
+            <div class="modal-header">
+                <h2 id="modal-title">Product Details</h2>
+                <button class="close-button" aria-label="Close product details modal" type="button">&times;</button>
+            </div>
+            <div id="modal-text" class="modal-body"></div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

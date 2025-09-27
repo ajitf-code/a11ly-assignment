@@ -353,7 +353,7 @@ footer {
 }
 
 .about-hero p {
-    color: #b3b3b3;
+    color: #333333 !important;
 }
 
 .about-content {
@@ -445,4 +445,93 @@ a.active {
     .contact-form {
         padding: 20px;
     }
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+a:focus, button:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+.modal[aria-hidden="true"] {
+    display: none;
+}
+
+.modal[aria-hidden="false"] {
+    display: block;
+}
+
+/* Add to your styles.css file */
+.error-message {
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    display: none;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+.help-text {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.radio-group {
+    margin-bottom: 8px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+/* Ensure sufficient contrast for all text */
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+}
+
+/* Ensure sufficient color contrast for all text elements */
+p, body {
+    color: #333333;
+}
+
+.hero-content p,
+.about-hero p {
+    color: #333333 !important;
 }
